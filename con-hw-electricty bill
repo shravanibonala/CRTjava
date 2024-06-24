@@ -21,6 +21,7 @@ Rs.100
 
   CODE :
 
+
 import java.io.*;
 import java.util.*;
 
@@ -29,20 +30,20 @@ public class Solution {
     public static void main(String[] args) {
     Scanner s=new Scanner(System.in);
     int uc=s.nextInt();
-    float bill;
+    int bill;
     if(uc<=200){
-        bill=(float)(uc*0.5);
+        bill=(int)(uc*0.5);
     }
     else if(uc>200&&uc<=400){
-        bill=(float)(uc*0.65)+100;
+        bill=(int)((uc*0.65)+100);
     }
     else if(uc>400&&uc<=600){
-        bill=(float)(uc*0.80)+200;
+        bill=(int)((uc*0.80)+200);
     }
     else
     {
-        bill=(float)(uc*1.25)+425;
+        bill=(int)((uc*1.25)+425);
     }
-    System.out.printf("Rs.%.0f",bill);
+    System.out.println("Rs."+bill);
     }
 }
