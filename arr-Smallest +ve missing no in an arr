@@ -1,0 +1,42 @@
+Smallest Positive Missing number
+
+You are given an array a[] of n integers.
+The task is to find the smallest positive number missing from the array.
+
+Sample Input 1 :6
+                4 2 0 -1 1 3
+Sample Output 1 : 3
+
+Sample Input 2 : 4
+                 2 6 8 3
+Sample Output 2 : 4
+
+CODE :
+
+import java.util.*;
+public class Sun{
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int n=s.nextInt();
+int a[]=new int[n];
+for(int i=0;i<n;i++)
+{
+a[i]=s.nextInt();
+}
+Arrays.sort(a);
+for(int i=0;i<n;i++)
+{
+if(a[i]>0)
+{
+    int st=a[i];
+    int no=a[i+1];
+    if((st+1)!=no)
+    {
+       System.out.println(st+1);
+    break;
+    }
+}
+}
+}
+}
