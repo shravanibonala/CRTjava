@@ -1,0 +1,37 @@
+Facing the sun
+
+Given an array representing heights of buildings.
+You have to count the buildings which will see the sunrise(Assume : Sun rise on the side of array starting point).
+Sample Input:
+5
+6 2 7 4 10
+Sample output:
+3
+
+
+CODE :
+
+import java util.*;
+public class Sun{
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int n=s.nextInt();
+int a[]=new int[n];
+for(int i=0;i<n;i++)
+{
+a[i]=s.nextInt();
+}
+int st=a[0];
+int cnt=1;
+for(int i=0;i<n;i++)
+{
+if(a[i]>st)
+{
+cnt++;
+}
+}
+System.out.println(cnt);
+}
+}
+}
