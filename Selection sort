@@ -1,0 +1,58 @@
+SELECTION SORT :
+
+i/p : 5 
+      4 3 2 5 1
+
+o/p : 1 2 3 4 5 
+
+PSEUDO CODE :
+
+For i=0 to n-1 do:
+  smallindex=i
+  For j=i+1 to n-1 do
+    if(A(j)<A(smallindex))
+      smallindex=j
+    End if
+  End For
+Temp=A(i)
+A(i)=A(smallindex)
+A(smallindex)=Temp
+End For
+
+
+CODE :
+
+import java.util.*;
+class SelectionSort{
+        static void selectionSort(int a[],int n)
+        {
+            for(int i=0;i<n;i++)
+            {
+                int min=i;
+                for(int j=i+1;j<n;j++)
+                {
+                    if(a[min]>a[j])
+                    {
+                        min=j;
+                    }
+                }
+                        int t=a[i];
+                        a[i]=a[min];
+                        a[min]=t;
+            }
+        }
+ public static void main(String[] args) {
+         Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        selectionSort(a,n);
+        for(int i=0;i<n;i++)
+        {
+        System.out.print(a[i]+" ");
+        }
+    }
+}
