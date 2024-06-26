@@ -1,0 +1,50 @@
+LINEAR SEARCH :
+
+I/P : 5
+      1 4 6 2 5
+      7
+O/P : Element is not present
+
+I/P : 5
+      4 2 6 1 3
+      3
+O/P : Element is found at : 4
+
+CODE :
+
+import java.util.*;
+class  LinearSearch{
+    static int linearSearch(int a[],int n,int key)
+    {
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]==key)
+            return i;
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        int k=s.nextInt();
+        int res=linearSearch(a,n,k);
+        if(res==-1)
+        {
+            System.out.println("Element is not present");
+        }
+        else
+        {
+             System.out.println("Element is found at : "+res);
+        }
+    }
+}
+Time complexity :
+                Best :O(1)
+                Avg :O(n)
+                Worst :O(n)
+Space Complexity : O(1)
