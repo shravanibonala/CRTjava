@@ -1,0 +1,51 @@
+
+Let j and k be two indices in an array A.
+If j<k and A[j]>A[k], then the pair (j,k) is known as "Inversion pair".
+
+Example-1 :
+
+I/P :	n:5
+	A:1 20 6 4 5
+O/P :	5
+
+Explanation :
+The inversion pair in array A are (20,6),(20,4),(20,5),(6,4) and (6,5), the count of the inversioins are 5.
+Hence 5 is returned.
+
+Example-2 :
+
+I/P :	n:7
+	A:13 10 9 6 21 15 14
+O/P :	9
+
+Explanation :
+The inversion pair in array A are (13,10),(13,9),(13,6),(10,9),(10,6),(9,6),(21,15),(21,14) and (15,14) the count of the inversioins are 9.
+Hence 9 is returned.
+
+CODE :
+
+
+import java.util.*;
+class InversionCount{
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        int cnt=0;
+        for(int i=0;i<n;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        for(int i=0;i<n-1;i++)
+        {
+             for(int j=i+1;j<n;j++)
+        {
+            if(a[i]>a[j])
+            {
+                cnt++;
+            }
+        }
+        }
+       System.out.print(cnt); 
+    }
+}
