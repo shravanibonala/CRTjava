@@ -1,0 +1,65 @@
+Merge sorted array
+You are given two integer arrays arr1 and arr2, sorted in non-decreasing order, and two integers m and n, representing the no. of elements in arr1 and arr2 respectively.
+Merge arr1 and arr2 into a single array sorted in non-decreasing order.
+EXAMPLE :
+I/P :   6
+       	0 1 2 3 4 7
+	      3
+	      2 5 6
+O/P :   0 1 2 2 3 4 5 6 7 
+
+
+CODE :
+
+
+import java.util.*;
+class MergeSortedArr {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        int m=s.nextInt();
+        int b[]=new int[m];
+        for(int i=0;i<m;i++)
+        {
+            b[i]=s.nextInt();
+        }
+	int c[]=new int[n+m];
+	int i=0,j=0,k=0;
+	while(i<n&&j<m)
+	{
+	if(a[i]<b[j])
+	{
+	c[k]=a[i];
+	i++;
+	k++;
+	}
+	else
+	{
+	c[k]=b[j];
+	j++;
+	k++;
+	}
+	}
+	while(i<n)
+	{
+	c[k]=a[i];
+	i++;
+	k++;
+	}
+	while(j<m)
+	{
+	c[k]=b[j];
+	j++;
+	k++;
+	}
+        for(i=0;i<k;i++)
+        {
+        System.out.print(c[i]+" ");
+        }
+    }
+}
