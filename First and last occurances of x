@@ -1,0 +1,56 @@
+
+First and last occurances of x
+
+Given a sorted array
+
+Sample Input 0
+8 4
+1 3 4 4 4 4 46 7
+Sample Output 0
+2 5
+
+Sample Input 1
+4 5
+-1 2 3 4
+Sample Output 1
+-1 -1
+
+CODE :
+
+
+import java.util.*;
+class FirstLastOccur{
+    
+    public static void main(String[] args) {
+       Scanner s=new Scanner(System.in);
+       int n=s.nextInt();
+       int k=s.nextInt();
+       int a[]=new int[n];
+       int i;
+       for(i=0;i<n;i++)
+       {
+           a[i]=s.nextInt();
+       }
+       for(i=0;i<n;i++)
+       {
+           if(a[i]==k){
+            System.out.print(i+" ");
+            break;
+           }
+       }
+       if(i==n){
+           System.out.print("-1 ");
+       }
+    for(i=n-1;i>=0;i--)
+       {
+           if(a[i]==k)
+           {
+                System.out.print(i+" ");
+                break;
+           }
+       }
+       if(i==-1){
+           System.out.print("-1 ");
+       }
+    }
+}
