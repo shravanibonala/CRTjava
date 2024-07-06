@@ -1,0 +1,38 @@
+/*REVERSE A STRING 
+reverse the characters in string if it is a letter or number 
+print the symbols in the same position as they are
+
+I/P :	abcd@12#efg$h
+O/P :	hgfe@21#dcb$a
+
+CODE :
+*/
+import java.util.*;
+class StrRevAlp{
+    public static void main(String[] args) {
+       Scanner s=new Scanner(System.in);
+       String s1=s.nextLine();
+       char ch[]=new char[s1.length()];
+       int j=0;
+       for(int i=s1.length()-1;i>=0;i--)
+       {
+           if(Character.isLetterOrDigit(s1.charAt(i)))
+           {
+               ch[j]=s1.charAt(i);
+               j++;
+           }
+       }
+       int k=0;
+       for(int i=0;i<s1.length();i++)
+       {
+           if(!(Character.isLetterOrDigit(s1.charAt(i))))
+           {
+               System.out.print(s1.charAt(i));
+           }
+          else if(k<j){
+           System.out.print(ch[k++]);
+           
+           }
+       }
+    }
+}
